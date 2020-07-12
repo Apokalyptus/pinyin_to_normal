@@ -7,6 +7,7 @@ Because Pinyin input is not everywhere possible or tones are not known.
 Usage:
 
 $> cat textfile | pinyin_to_normal
+
 where textfile format should be:
 lǎopó
 lǎogōng
