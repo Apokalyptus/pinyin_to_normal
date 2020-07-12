@@ -8,7 +8,7 @@ Usage:
 
 $> cat textfile | pinyin_to_normal
 
-where textfile format should be:
+where textfile format should be (one word per line):
 
 lǎopó
 
