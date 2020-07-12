@@ -1,12 +1,3 @@
-
-
-
-//fn main() {
-//    let test_val = String::from("lǎogōng");
-//    let normal = pinyin_to_normal::pinyin_to_normal(test_val.to_string());
-//    println!("{}", normal);
-//}
-
 use std::io;
 
 mod pinyin_to_normal;
