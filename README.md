@@ -11,14 +11,24 @@ $> cat textfile | pinyin_to_normal
 where textfile format should be:
 
 lǎopó
+
 lǎogōng
+
 xiānsheng
+
 tàitai
+
 àirén
+
 měinǚ
+
 shuàigē
+
 āyí
+
 ...
+
 
 or 
 $> echo lǎopó | pinyin_to_normal
+ 
