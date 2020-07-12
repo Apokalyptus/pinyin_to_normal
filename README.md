@@ -30,5 +30,6 @@ shuàigē
 
 
 or 
+
 $> echo lǎopó | pinyin_to_normal
  
