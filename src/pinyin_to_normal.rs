@@ -24,7 +24,7 @@ pub fn pinyin_to_normal(input_string: String) -> String {
 
     for c in input_string.chars() {
         match char_map.get(&c) {
-            Some(&n) => result.push(n),
+            Some(n) => result.push(**n),
             None => result.push(c),
         }
     }
