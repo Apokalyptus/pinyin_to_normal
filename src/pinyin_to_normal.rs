@@ -1,40 +1,35 @@
+use std::collections::HashMap;
+
 pub fn pinyin_to_normal(input_string: String) -> String {
-    let _pinyin = [ 'ā','á','ǎ','à',
-                    'ē','é','ě','è',
-                    'ī','í','ǐ','ì',
-                    'ō','ó','ǒ','ò',
-                    'ū','ú','ǔ','ù',
-                    'ǖ','ǘ','ǚ','ǜ'            
-                ];
+    let pinyin = [
+        'ā','á','ǎ','à',
+        'ē','é','ě','è',
+        'ī','í','ǐ','ì',
+        'ō','ó','ǒ','ò',
+        'ū','ú','ǔ','ù',
+        'ǖ','ǘ','ǚ','ǜ'
+    ];
+    
+    let normal = [
+        'a','a','a','a',
+        'e','e','e','e',
+        'i','i','i','i',
+        'o','o','o','o',
+        'u','u','u','u',
+        'ü','ü','ü','ü'
+    ];
 
-    let _normal = [ 'a','a','a','a',
-                    'e','e','e','e',
-                    'i','i','i','i',
-                    'o','o','o','o',
-                    'u','u','u','u',
-                    'ü','ü','ü','ü'
-                ];
+    let char_map: HashMap<_, _> = pinyin.iter().zip(normal.iter()).collect();
+    let mut result = String::with_capacity(input_string.len());
 
-    let mut result = String::new();
-
-    for (_i, _c) in input_string.chars().enumerate(){
-        
-        let mut tmp = String::new();
-     
-        for _j in 0.._pinyin.len() {
-            if _c == _pinyin[_j] {
-                tmp = _normal[_j].to_string();
-                continue;
-            } 
+    for c in input_string.chars() {
+        match char_map.get(&c) {
+            Some(&n) => result.push(n),
+            None => result.push(c),
         }
-        if tmp.is_empty() {
-            tmp = _c.to_string();
-        }
-        result = [result,tmp].join("");
-
-        
     }
-    return result;
+    
+    result
 }
 
 
